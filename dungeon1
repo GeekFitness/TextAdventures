@@ -119,6 +119,7 @@ def treasure_room
 		elsif
 			choice == "sparkling ruby"
 			puts "Congratulations! You picked the one true treasure! A million blessings on your home and your family and a million curses on your enemies! Thanks for playing!"
+			exit(0)
 		elsif
 			choice == "tiny sapphire"
 			dead("The sapphire slipped out of your fingers when you picked it up. When you leaned down to pick it up, you hit your head, cutting a long gash open. It will get infected, and you'll die in pain. Sucks.")
