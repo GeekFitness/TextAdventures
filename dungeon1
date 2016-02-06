@@ -1,0 +1,137 @@
+def start
+	puts "You are standing in a dimly lit room. All you can see is a single hallway ahead of you, and a table with two glasses on it."
+	puts "After climbing from its base in the forest, you are very tired and thirsty."
+	puts "You see a red glass and a blue glass. You may only choose one to drink from."
+	puts "Which do you choose?"
+
+	
+	while true 
+		print "> "
+		choice = $stdin.gets.chomp
+	
+		if choice == "blue"
+			pit_room
+		elsif
+			choice == "red"	
+			dead("You drank poison. Good grief.")
+		else
+			puts "I have no idea what that means. Why don't you have a drink instead?"
+		end
+	end
+end
+
+def pit_room
+	puts "AHHHHH! That was some good blue."
+	puts "Fully sated, you walk down the hallway and find yourself at the edge of a deep, black pit."
+	puts "There is a ledge you can probably grab, and there is an window-sized opening to the right you can probably jump to."
+	puts "What will you do?"
+	
+	while true 
+		print "> "
+		choice = $stdin.gets.chomp
+		
+		if choice == "grab ledge"
+			dead("Your fingers slip as you haul yourself over the pit. You fall to your death. All that climbing gear, but no parachute? For shame.")
+		elsif 
+			choice == "jump"
+			pool
+		else
+			"Say what, now? Try that again."
+		end
+	end
+end
+
+def pool
+	puts "You are now in a deep pool of water."
+	puts "You look around, and there is a ladder leading up."
+	puts "You also wonder if there is something deeper in the abyss."
+	
+	while true 
+		print "> "
+		choice = $stdin.gets.chomp
+		
+		if choice == "swim down"
+			lava_cave
+		elsif
+			choice == "climb ladder"
+			throne_room
+		else
+			puts "Nope. That didn't work."
+		end
+	end
+end
+
+def lava_cave
+	puts "You take a deep breath and dive beneath the surface."
+	puts "As you go further down, you see a glimmer of light."
+	puts "Your breath is running short. But you want to see what that light is."
+	puts "It's lava. That light was lava. Swim up. SWIM UP!"
+	
+	while true
+		print "> "
+		choice = $stdin.gets.chomp
+		
+		if choice == "swim up"
+			puts "You swim upward to safety."
+			pool
+		else
+			dead("YOU DIED FROM LAVA! WHY DIDN'T YOU SWIM UP? YOU SAW LAVA AND DIDN'T RUN! WHAT IS WRONG WITH YOU? I AM DISSAPOINT.")
+		end
+	end
+end
+
+def throne_room
+	puts "Well, you made it to the throne room. Good job!"
+	puts "The king is sitting on his throne. But he's just a skeleton."
+	puts "Yep, he's dead."
+	puts "He is surrounded by three skeletons who come to life as you edge closer."
+	puts "Yep, they're attacking you. DEFEND YOURSELF! #cueintensemusic"
+	
+	while true
+		print "> "
+		choice = $stdin.gets.chomp
+		
+		if choice == "defend myself"
+			puts "You punch the nearest skeleton in the jaw. It breaks off and flies through the air."
+			puts "The flying jawbone strikes the next skeleton in line and shatters its ribcage, killing it."
+			puts "The third skeleton trips over the bones of the shattered one, falling and shattering itself to bits."
+			puts "You quickly jab the jawless skeleton in the sternum, and it crumbles to dust."
+			puts "Wow, that was easy. Those guards were kind of chumps. The undead ain't got nothing on those karate lessons you took as a kid, huh?"
+			treasure_room
+		else
+			dead("Instead of defending yourself, you...did something else and the skeletal guards then ate you alive. What a way to go. I mean, they don't even have stomachs. Eating you? What's that about?")
+		end
+	end
+end
+
+def treasure_room
+	puts "Stepping around all the gross skeletons, you find a coffer behind the throne."
+	puts "It's filled to the brim with gold, which you decide to take all of."
+	puts "But you don't have room for all the other trinkets and goodies."
+	puts "There is a giant emerald, a sparkling ruby, and a tiny sapphire. You can only take one. So which will it be?"
+	
+	while true
+		print "> "
+		choice = $stdin.gets.chomp
+		
+		if choice == "giant emerald"
+			dead("The stone crumbles as you touch it, piercing your skin. The hand begins to rot immediately. You fear it will only be a matter of time before the curse overtakes the rest of your body. Sorry! Better luck next life!")
+		elsif
+			choice == "sparkling ruby"
+			puts "Congratulations! You picked the one true treasure! A million blessings on your home and your family and a million curses on your enemies! Thanks for playing!"
+		elsif
+			choice == "tiny sapphire"
+			dead("The sapphire slipped out of your fingers when you picked it up. When you leaned down to pick it up, you hit your head, cutting a long gash open. It will get infected, and you'll die in pain. Sucks.")
+		elsif
+			puts "I don't think that's in the box, actually. Want to grab something else?"
+		end
+	end
+end	
+		
+	
+def dead(why)
+	puts why
+	exit(0)
+end
+
+start
